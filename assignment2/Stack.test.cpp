@@ -2,6 +2,7 @@
 
 #include "Stack.hpp"
 #include "Node.hpp"
+#include "Operator.hpp"
 #include "doctest/doctest.h"
 #include <iostream>
 #include <variant>
@@ -22,6 +23,17 @@ TEST_CASE("Test push then pop") {
   CHECK(std::get<double>(top_data->data) == 2);
   auto bottom_data = stack.Pop();
   CHECK(std::get<double>(bottom_data->data) == 1);
+}
+
+TEST_CASE("Push then pop an Operator") {
+  auto node = Node();
+  node.data = Operator::PLUS;
+
+  auto stack = Stack();
+  stack.Push(&node);
+
+  auto result = stack.Pop();
+  CHECK(std::get<Operator>(result->data) == Operator::PLUS);
 }
 
 TEST_CASE("Test underflow exception") {

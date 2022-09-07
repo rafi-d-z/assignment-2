@@ -1,11 +1,8 @@
-//
-// Created by csar on 7/3/22.
-//
-
 #include "RpnCalculator.hpp"
 #include "Operator.hpp"
 #include "fmt/format.h"
 #include <stdexcept>
+#include <string>
 #include <variant>
 
 namespace assignment2 {
@@ -21,7 +18,19 @@ void RpnCalculator::Push(std::variant<Operator, double> val) {
 }
 
 void RpnCalculator::Push(std::string c) {
-  // TODO: implement me
+  try {
+    double d = std::stod(c);
+    Push(d);
+  } catch (std::invalid_argument const &ex) {
+    // not a double, so it must be an operator
+    if (c.length() == 1) {
+      Operator op = parse(c.at(0));
+      Push(op);
+    } else {
+      throw std::invalid_argument(
+          fmt::format("{} cannot be parsed as a double or an operator", c));
+    }
+  }
 }
 
 void RpnCalculator::Clear() { stack = Stack{}; }

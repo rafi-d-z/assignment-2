@@ -1,7 +1,3 @@
-//
-// Created by csar on 7/3/22.
-//
-
 #ifndef ASSIGNMENT_2_RPNCALCULATOR_HPP
 #define ASSIGNMENT_2_RPNCALCULATOR_HPP
 
