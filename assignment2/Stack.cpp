@@ -17,6 +17,7 @@ void Stack::Push(Node *node) {
 }
 
 auto Stack::Pop() -> Node * {
+  // TODO: implement me -- I throw an error
   throw std::underflow_error("The stack is empty!");
 }
 
