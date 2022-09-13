@@ -44,3 +44,17 @@ You need to implement the following methods in `RpnCalculator.cpp`:
 - There is a `.devcontainer` directory that should allow you use a remote development container in VSCode.
 (I do intend to just publish a docker image so we don't build a new one for each assignment, just spin up a new container.)
 - The bash script `scripts/zip_assignment.sh` is the same as last time.
+
+## Grading
+
+To get full points on this assignment:
+- your Stack code needs to compile
+- the Stack tests need to pass
+- your RpnCalculator code needs to compile
+- the RpnCalculator tests need to pass
+- your assignment is packaged properly (just run the shell script! your zip file needs to include: `CMakeLists.txt`, `assignment-2`, `cmake`, `external`)
+- you ran `clang-format`
+
+You should (but do not need to):
+- use valgrind to find your memory leaks and repair them
+- clear the `clang-tidy` warnings 
