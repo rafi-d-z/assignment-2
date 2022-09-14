@@ -3,7 +3,6 @@
 #include "RpnCalculator.hpp"
 #include "doctest/doctest.h"
 #include <array>
-#include <experimental/array>
 #include <string>
 
 using namespace assignment2;
@@ -36,8 +35,8 @@ TEST_CASE("2 * (4 + 8) = 24") {
 
 TEST_CASE("((2*5) + 4) / (3*2) + 1) = 2 ") {
   auto calculator = RpnCalculator();
-  auto arr = std::experimental::make_array("2", "5", "*", "4", "+", "3", "2",
-                                           "*", "1", "+", "/");
+  std::array<std::string,11> arr = {"2", "5", "*", "4", "+", "3", "2",
+                                           "*", "1", "+", "/"};
   for (const std::string &item : arr) {
     calculator.Push(item);
   }
