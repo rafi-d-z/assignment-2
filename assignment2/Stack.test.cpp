@@ -10,14 +10,14 @@
 using namespace assignment2;
 
 TEST_CASE("Test push then pop") {
-  Node node1 = Node();
-  node1.data = 1.0;
-  Node node2 = Node();
-  node2.data = 2.0;
+  Node *node1 = new Node();
+  node1->data = 1.0;
+  Node *node2 = new Node();
+  node2->data = 2.0;
 
   auto stack = Stack();
-  stack.Push(&node1);
-  stack.Push(&node2);
+  stack.Push(node1);
+  stack.Push(node2);
   auto top_data = stack.Pop();
   CHECK(top_data);
   CHECK(std::get<double>(top_data->data) == 2);
@@ -26,11 +26,11 @@ TEST_CASE("Test push then pop") {
 }
 
 TEST_CASE("Push then pop an Operator") {
-  auto node = Node();
-  node.data = Operator::PLUS;
+  auto node = new Node();
+  node->data = Operator::PLUS;
 
   auto stack = Stack();
-  stack.Push(&node);
+  stack.Push(node);
 
   auto result = stack.Pop();
   CHECK(std::get<Operator>(result->data) == Operator::PLUS);
