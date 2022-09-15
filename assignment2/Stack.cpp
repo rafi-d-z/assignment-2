@@ -7,22 +7,38 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include "Node.hpp"
 
 namespace assignment2 {
 
 auto Stack::Size() -> int { return size_; }
 
-void Stack::Push(Node *node) {
+Node* top;
+
+void Stack::Push(Node* node) {
   // TODO: implement me
+  Node* temp = new Node();
+
+  temp->data = data;
+  temp->next = top;
+  top = temp;
+
 }
 
 auto Stack::Pop() -> Node * {
   // TODO: implement me -- I throw an error
   throw std::underflow_error("The stack is empty!");
+
+  Node* temp;
+
+  temp = top;
+  top = top->link;
+  free(temp);
 }
 
 Stack::~Stack() {
   // TODO: implement me; make sure to clean up the head pointer
+  
 }
 
 auto Stack::ToString() -> std::string {

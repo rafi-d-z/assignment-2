@@ -13,7 +13,7 @@ namespace assignment2 {
 // - an Operator
 struct Node {
   std::variant<Operator, double> data;
-  Node *next = nullptr;
+  Node* next = nullptr;
 
   auto ToString() -> std::string {
     if (data.index() == 0) {
