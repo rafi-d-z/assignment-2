@@ -9,7 +9,12 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "gnu17",
             "cppStandard": "c++17",
+<<<<<<< HEAD
             "intelliSenseMode": "linux-gcc-x64"
+=======
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+>>>>>>> 4fc3d02 (commit 12)
         }
     ],
     "version": 4

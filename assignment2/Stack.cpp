@@ -2,6 +2,7 @@
 // Created by csar on 7/2/22.
 //
 #include "Stack.hpp"
+#include "Node.hpp"
 #include <fmt/ranges.h>
 #include <iostream>
 #include <stdexcept>
@@ -17,28 +18,35 @@ Node* top;
 
 void Stack::Push(Node* node) {
   // TODO: implement me
-  Node* temp = new Node();
+<<<<<<< HEAD
 
-  temp->data = data;
+=======
+  Node *temp;
+
+  temp->data = node->data;
   temp->next = top;
   top = temp;
-
+>>>>>>> 4fc3d02 (commit 12)
 }
 
 auto Stack::Pop() -> Node * {
   // TODO: implement me -- I throw an error
-  throw std::underflow_error("The stack is empty!");
-
-  Node* temp;
+  Node *temp;
 
   temp = top;
-  top = top->link;
+  top = top->next;
+  throw std::underflow_error("The stack is empty!");
+<<<<<<< HEAD
+=======
+>>>>>>> 4fc3d02 (commit 12)
   free(temp);
 }
 
 Stack::~Stack() {
   // TODO: implement me; make sure to clean up the head pointer
-  
+<<<<<<< HEAD
+  this->head = NULL; 
+>>>>>>> 4fc3d02 (commit 12)
 }
 
 auto Stack::ToString() -> std::string {
