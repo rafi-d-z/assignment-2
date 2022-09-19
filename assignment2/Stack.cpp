@@ -14,19 +14,15 @@ namespace assignment2 {
 
 auto Stack::Size() -> int { return size_; }
 
-Node* top;
+Node *top;
 
 void Stack::Push(Node* node) {
   // TODO: implement me
-<<<<<<< HEAD
-
-=======
   Node *temp;
 
   temp->data = node->data;
   temp->next = top;
   top = temp;
->>>>>>> 4fc3d02 (commit 12)
 }
 
 auto Stack::Pop() -> Node * {
@@ -36,17 +32,12 @@ auto Stack::Pop() -> Node * {
   temp = top;
   top = top->next;
   throw std::underflow_error("The stack is empty!");
-<<<<<<< HEAD
-=======
->>>>>>> 4fc3d02 (commit 12)
   free(temp);
 }
 
 Stack::~Stack() {
   // TODO: implement me; make sure to clean up the head pointer
-<<<<<<< HEAD
   this->head = NULL; 
->>>>>>> 4fc3d02 (commit 12)
 }
 
 auto Stack::ToString() -> std::string {
